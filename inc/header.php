@@ -25,7 +25,7 @@
 			</div>
 		</div>
 	</div>
-<!-- OLD CODE
+
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 	  <a class="navbar-brand" href="/public_html/">Unsere Games</a>
@@ -51,4 +51,3 @@
 	</div>
 </nav>
 </header>
--->
