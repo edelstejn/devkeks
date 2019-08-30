@@ -7,48 +7,47 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<!--<link rel="stylesheet" type="text/css" href="./css/mystyles.css">-->
 <title>AAA-Games für PC/XBOX/PS - Manche Spieletitel lohnen sich immer!</title>
 </head>
 <body>
-<!-- Navbar starts -->	
-<!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
-  <div class="navbar-brand" href="#">
-  	<img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-  	<h1>BOSS GAMES</h1>
-  </div>
-</nav>
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				
-			</div>
-		</div>
-	</div>
-
-<header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-black">
-	  
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-expand-md py-5">
+  <a class="navbar-brand" href="/public_html"><img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top ml-lg-5" alt="Boss Games Logo"> BOSS GAMES</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	<ul class="navbar-nav mr-auto">
-		<li class="nav-item"><a href="/public_html/php/assassins.php">Assassins Creed</a></li>
-		<li class="nav-item"><a href="/public_html/php/darksouls.php">Dark Souls</a></li>
-		<li class="nav-item"><a href="/public_html/php/battlefield.php">Battlefield</a></li>
-		<li class="nav-item"><a href="/public_html/php/gta.php">Grand Theft Auto</a></li>
-		<li class="nav-item"><a href="/public_html/php/reddead.php">Red Dead Redemption</a></li>
-		<li class="nav-item"><a href="/public_html/php/php/witcher.php">The Witcher</a></li>
-		<li class="nav-item"><a href="/public_html/php/elderscrolls.php">The Elder Scrolls</a></li>
-		<li class="nav-item"><a href="/public_html/php/dragonage.php">Dragon Age</a></li>
-		<li class="nav-item"><a href="/public_html/php/masseffect.php">Mass Effect</a></li>
-		<form class="form-inline">
+	<ul class="navbar-nav mr-auto ml-lg-5">
+		<li class="nav-item">
+			<a class="nav-link" href="/public_html/php/assassins.php">Assassins Creed</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/public_html/php/darksouls.php">Dark Souls</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/public_html/php/battlefield.php">Battlefield</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/public_html/php/gta.php">Grand Theft Auto</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/public_html/php/reddead.php">Red Dead Redemption</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/public_html/php/php/witcher.php">The Witcher</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/public_html/php/elderscrolls.php">The Elder Scrolls</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/public_html/php/dragonage.php">Dragon Age</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/public_html/php/masseffect.php">Mass Effect</a>
+		</li>
+	</ul>
+		<form class="form-inline my-2 my-lg-0 mr-lg-5">
     		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" action="search.php" method="post">
     		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Suchen</button>
 		</form>
-	</ul>
 	</div>
 </nav>
-</header>

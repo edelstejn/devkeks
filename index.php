@@ -1,6 +1,16 @@
 <?php include('inc/header.php'); ?>
-<div><p>Hier folgen Einträge Videospielreihen der letzten Jahre die uns besonders gut gefallen, einfach anklicken und schauen, auf dieser Seite befinden sich alle Titel die in der Datenbank vorhanden sind. Von Western bis Science-Fiction ist für jeden etwas dabei. Um mehr über einzelene Reihen zu erfahren klicken sie einfach auf den Titel in der oberen Navigationsleiste, viel Spaß! </p></div>
-<?php include('inc/db.php');
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 mx-5 my-5">
+			<h1 class="display-3 text-center my-5">Willkommen bei Boss Games!</h1>
+			<p class="lead mx-5">Hier folgen Einträge Videospielreihen der letzten Jahre die uns besonders gut gefallen, einfach anklicken und schauen, auf dieser Seite befinden sich alle Titel die in der Datenbank vorhanden sind. Von Western bis Science-Fiction ist für jeden etwas dabei. Um mehr über einzelene Reihen zu erfahren klicken sie einfach auf den Titel in der oberen Navigationsleiste, viel Spaß! </p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col mx-5 my-5">
+			<?php include('inc/db.php');
 # Die variable $suchergebnis soll mit dem Formular befüllt werden, sodass die sql-Abfrage dann nach dem Namen des Spiels in der Datenbank sucht. Cool wärs auch, wenn ne Fehlermeldung wie "Leider führte die Suche zu keinem Ergebnis"
 # wenn die Suche keine Treffer ausgibt. Dazu bin ich aber einfach zu dumm.
 $suchergebnis = 'batt';
@@ -21,7 +31,7 @@ $bildlink = implode($bildarray);
 
 $spielid = $row->idSpiel;
 #echo $spielid . '<br>';
-echo '<table class="table table-striped">';
+echo '<table class="table table-borderless">';
 echo '<thead>';
 echo '<tr>';
 echo '<th>'.$row->Spielname.'</th>';
@@ -91,5 +101,8 @@ echo "<br>";
 
 
 $dbm->close();
-
-include('inc/footer.php'); ?>
+?>
+</div>
+	</div>
+</div>
+<?php include('inc/footer.php'); ?>

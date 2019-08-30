@@ -1,4 +1,6 @@
 /*ille css*/
+@navbar-height: 100px; !important
+/*
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 body {
 	margin-left:2em!important;
