@@ -14,11 +14,10 @@
 <!-- Navbar starts -->	
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
+  <div class="navbar-brand" href="#">
   	<img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-  	BOSS GAMES
-  </a>
-  <a class="navbar-brand" href="/public_html/">Unsere Games</a>
+  	<h1>BOSS GAMES</h1>
+  </div>
 </nav>
 	<div class="container">
 		<div class="row">
