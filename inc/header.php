@@ -33,7 +33,7 @@
 			<a class="nav-link" href="php/reddead.php">Red Dead Redemption</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="php/php/witcher.php">The Witcher</a>
+			<a class="nav-link" href="php/witcher.php">The Witcher</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="php/elderscrolls.php">The Elder Scrolls</a>
