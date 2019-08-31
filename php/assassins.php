@@ -1,6 +1,6 @@
 <?php
 include('../inc/header.php');
-include('../txt/assas.html')
+include('../txt/assas.html');
 include('../inc/db.php');
 $reiheid = 1504;
 /*Spiel folgendem Genre zugeordnet*/
