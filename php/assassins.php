@@ -34,7 +34,7 @@ $genreliste = implode(", ", $genrerein);
 
 echo '<p>'.'Die Spiele dieser Reihe gehören den Genre/s ' . '<b>' .$genreliste . '</b>'.' an</p>'; 
 
-$platt ="Select * FROM Spiel
+$platt ="SELECT * FROM Spiel
 INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel
 INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform
 WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
@@ -102,7 +102,7 @@ echo '<td>'.$row->ReleaseDate.'</td>';
 echo '<td>'.$row->Publisher.'</td>';
 
 #Generierung der Abfrage für die einzelnen Plattformen des Titels
-$plattsql ="Select Plattform FROM Spiel
+$plattsql ="SELECT Plattform FROM Spiel
 INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel
 INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform
 WHERE idSpiel LIKE '$spielid'";
