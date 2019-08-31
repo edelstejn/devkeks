@@ -8,3 +8,4 @@ include('../inc/db.php');
 Matrikel Nummer: 2362250 </p>
 		</div>
 	</div>
+?>
