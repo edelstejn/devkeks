@@ -17,7 +17,7 @@ Der Titel lässt sich aus sowohl Ego- als auch Third-Person Perspektive spielen.
 		</div>
 	</div>
 
-$reiheid = 1507;
+$reiheid = 1508;
 
 $genre = "SELECT * FROM Spiel
 INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel
