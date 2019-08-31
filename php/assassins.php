@@ -1,6 +1,10 @@
 <?php
 include('../inc/header.php');
 include('../txt/assas.html');
+?>
+<div class="row container-fluid">
+	<div class="col mx-5 my-5">
+<?php
 include('../inc/db.php');
 $reiheid = 1504;
 /*Spiel folgendem Genre zugeordnet*/
@@ -69,5 +73,7 @@ while($row = mysqli_fetch_object($data)){
 	echo '</div>';
 }
 echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
-include('../inc/footer.php');
+?>
+</div></div>
+<?php include('../inc/footer.php');
 ?>
