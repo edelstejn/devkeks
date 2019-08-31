@@ -22,7 +22,7 @@ while ($row = mysqli_fetch_object($plattdata)){
 }
 $plattrein = array_unique ($plattarray);
 $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, Wert2 "und" Wert3*/
-echo '<p>'.'Die Spiele dieser Reihe sind auf den Plattformen '.'<b>' .$plattliste . '</b>'.' erschienen.<br><br>'.'</p></div>';
+echo '<p>'.'Die Spiele dieser Reihe sind auf den Plattformen '.'<b>' .$plattliste . '</b>'.' erschienen.<br><br>'.'</p></div></div>';
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
 $data = $dbm->query($sql);
