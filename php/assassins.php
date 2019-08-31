@@ -35,7 +35,7 @@ while($row = mysqli_fetch_object($data)){
 	$bildlink = implode($bildarray);
 	$spielid = $row->idSpiel;
 	#echo $spielid . '<br>';
-	echo '<div class="card" style="width: 18rem;">';
+	echo '<div class="card" style="width: 30rem;">';
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
 	echo '<p class="card-text">'.'Genres:'.$genresqlliste.'</p>';
