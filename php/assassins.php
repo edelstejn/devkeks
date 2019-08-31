@@ -1,46 +1,21 @@
-<?php include('../inc/header.php');
+<?php include('inc/header.php');?>
+<?php include('inc/db.php');
 
-include('../inc/db.php');
-
-<div class="row">
-		<div class="col-12 mx-5 my-5">
-			<span class="border-left-100"></span>
-	                <h1 class="display-3 text-center my-5">Assassins Creed</h1>
-			<p class="lead mx-5">Die Assassin’s-Creed-Reihe ist eine Computerspielserie des französischen Publishers Ubisoft aus dem Genre Action-Adventure.
-Sie besteht seit 2007 mit der Veröffentlichung des gleichnamigen Spiels und umfasst elf Hauptspiele und zahlreiche Ableger. 
-Die meisten Teile der Serie wurden vom kanadischen Studio Ubisoft Montreal entwickelt.
-Alle Teile der Reihe sind Open-World-Spiele. Der Großteil der Handlung jedes der Spiele findet in der Vergangenheit in einer bestimmten Region und Epoche statt, wobei auf reale historische Ereignisse eingegangen wird. 
-So trifft der Spieler im Laufe der Missionen auf zahlreiche bekannte Persönlichkeiten der jeweiligen Zeit wie Richard Löwenherz, Saladin, Leonardo da Vinci, Alexander VI. und viele weitere. 
-Auch andere Ereignisse der Zeit werden integriert, so löst der Spieler unbeabsichtigt die Erdbeben in Haiti (1751) und das Erdbeben von Lissabon 1755 aus. 
-Der Handlungsstrang, der sich durch die Serie zieht, ist der seit Jahrhunderten andauernde Konflikt zwischen Assassinen und Templern, wobei der Spieler zumeist einen Assassinen verkörpert. 
-Die Reihe erzielt durch ihre oftmals realistische Einbindung von fiktiven Elementen in den zeithistorischen Kontext eine gelungene Immersion. 
-Das Spiel lässt sich aus der Third-person betrachten und bietet dem Spieler viel Bewegungsspielraum, so lässt sich fast jedes Gebäude erklimmen.Hier folgen Einträge Videospielreihen der letzten Jahre die uns besonders gut gefallen, einfach anklicken und schauen, auf dieser Seite befinden sich alle Titel die in der Datenbank vorhanden sind. Von Western bis Science-Fiction ist für jeden etwas dabei. Um mehr über einzelene Reihen zu erfahren klicken sie einfach auf den Titel in der oberen Navigationsleiste, viel Spaß! </p>
-	
-	     </div>
-	</div>
-	
-	<!-- 16:9 aspect ratio -->
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kaRoCnxuDLw"></iframe>
-</div>	
-	$reiheid = 1504;
-
+$reiheid = 1504;
 $genre = "SELECT * FROM Spiel
 INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel
 INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre
 WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
 
 $genredata = $dbm->query($genre);
-
-while ($row = mysqli_fetch_object($genredata))
-{
-$genrearray[] = $row->Genre;
+while ($row = mysqli_fetch_object($genredata)){
+	$genrearray[] = $row->Genre;
 }
 
 $genrerein = array_unique ($genrearray);
 $genreliste = implode(", ", $genrerein);
 
-echo '<p>'.'Die Spiele dieser Reihe gehören den Genre/s ' . '<b>' .$genreliste . '</b>'.' an</p>'; 
+echo '<p>'.'Die Spiele dieser Reihe gehören den Genre/s ' . '<b>' .$genreliste . '</b>'.' an</p>';
 
 $platt ="Select * FROM Spiel
 INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel
