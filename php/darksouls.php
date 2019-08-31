@@ -2,16 +2,19 @@
 
 include('../inc/db.php');
 
-
-echo '<h1>Dark Souls</h1>';
-echo'<p> Im Gegensatz zu den meisten anderen Videospielen besitzt Dark Souls wenig straff erzählte Handlung, sondern fordert den Spieler, die Geschichte der Spielwelt und die Bedeutung seiner Handlungen selbst herauszufinden. 
+<div class="row">
+		<div class="col-12 mx-5 my-5">
+			<h1 class="display-3 text-center my-5">Dark Souls</h1>
+			<p class="lead mx-5">Im Gegensatz zu den meisten anderen Videospielen besitzt Dark Souls wenig straff erzählte Handlung, sondern fordert den Spieler, die Geschichte der Spielwelt und die Bedeutung seiner Handlungen selbst herauszufinden. 
 Kleine Hintergrundgeschichten und Informationen rund um die Spielwelt und ihre Bewohner werden durch Beschreibungen von Gegenständen oder kurze Dialoge mit NPCs erzählt.
 Das Spiel lässt bewusst viele Details offen, sodass der Spieler gefordert wird, eigene Schlüsse aus den Handlungsfragmenten zu ziehen. 
 Überall in der Spielwelt befinden sich Leuchtfeuer, die nach Aktivierung als Rücksetzpunkte beim Tod des Spielers dienen, die Estus-Flakons wieder auffüllen und es dem Spieler erlauben, von Monstern erhaltene Seelen in Talentpunkte zu investieren und später auch Waffen aufzuwerten oder zu reparieren. 
 Bei Nutzung eines Leuchtfeuers werden die meisten Gegner (jedoch keine Bossgegner) wieder lebendig; dies auch, wenn der Spieler durch Tod an ein Leuchtfeuer zurückkehren muss. 
 Außerdem verliert der Spieler alle gesammelten, jedoch noch nicht ausgegebenen Seelen und diese bleiben als grüne Wolke an der Position seines Todes zurück.
 Er hat anschließend die Möglichkeit, sie wieder aufzusammeln, indem er ohne einen weiteren Tod zu ihnen gelangt. Stirbt er allerdings auf dem Weg dorthin erneut, sind die Seelen verloren. 
-Diese Prinzip macht das Spiel anspruchsvoll und fordernd weshalb es bei seinen Fans so beliebt ist.';
+Diese Prinzip macht das Spiel anspruchsvoll und fordernd weshalb es bei seinen Fans so beliebt ist.</p>
+		</div>
+	</div>
 
 $reiheid = 1502;
 
