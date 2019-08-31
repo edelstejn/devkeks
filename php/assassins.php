@@ -15,6 +15,7 @@ Der Handlungsstrang, der sich durch die Serie zieht, ist der seit Jahrhunderten 
 Die Reihe erzielt durch ihre oftmals realistische Einbindung von fiktiven Elementen in den zeithistorischen Kontext eine gelungene Immersion. 
 Das Spiel lässt sich aus der Third-person betrachten und bietet dem Spieler viel Bewegungsspielraum, so lässt sich fast jedes Gebäude erklimmen.Hier folgen Einträge Videospielreihen der letzten Jahre die uns besonders gut gefallen, einfach anklicken und schauen, auf dieser Seite befinden sich alle Titel die in der Datenbank vorhanden sind. Von Western bis Science-Fiction ist für jeden etwas dabei. Um mehr über einzelene Reihen zu erfahren klicken sie einfach auf den Titel in der oberen Navigationsleiste, viel Spaß! </p>
 		</div>
+	<span class="border-left-100"></span>
 	</div>
 	<!-- 16:9 aspect ratio -->
 <div class="embed-responsive embed-responsive-16by9">
