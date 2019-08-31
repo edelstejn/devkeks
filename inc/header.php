@@ -55,13 +55,3 @@
 		</form>
 	</div>
 </nav>
-
-<?php include('inc/header.php'); ?>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-12 mx-5 my-5">
-			<h1 class="display-3 text-center my-5">Willkommen bei Boss Games!</h1>
-			<p class="lead mx-5">Hier folgen Einträge Videospielreihen der letzten Jahre die uns besonders gut gefallen, einfach anklicken und schauen, auf dieser Seite befinden sich alle Titel die in der Datenbank vorhanden sind. Von Western bis Science-Fiction ist für jeden etwas dabei. Um mehr über einzelene Reihen zu erfahren klicken sie einfach auf den Titel in der oberen Navigationsleiste, viel Spaß! </p>
-		</div>
-	</div>
-</div>
