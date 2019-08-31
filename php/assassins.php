@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_object($genredata)){
 }
 $genrerein = array_unique ($genrearray);
 $genreliste = implode(", ", $genrerein);
-echo '<div class="row container-fluid"><div class="col mx-5 my-5"><p>'.'Die Spiele dieser Reihe gehören den Genre/s ' . '<b>' .$genreliste . '</b>'.' an</p></div></div>';
+echo '<div class="col mx-5 my-5"><p>'.'Die Spiele dieser Reihe gehören den Genre/s ' . '<b>' .$genreliste . '</b>'.' an</p></div></div>';
 /*Spiel auf folgenden Plattformen verfügbar*/
 /*Select plattform value from DB*/ 
 $platt ="SELECT * FROM Spiel INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
