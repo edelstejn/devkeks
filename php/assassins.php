@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_object($genredata)){
 }
 $genrerein = array_unique ($genrearray);
 $genreliste = implode(", ", $genrerein);
-echo '<p class="mx-5">'.'Die Spiele dieser Reihe gehören den Genre/s'.'<b>'.$genreliste .'</b>'.'an</p>';
+echo '<p class="mx-5">'.'Die Spiele dieser Reihe gehören den Genre/s'.'<br><b>'.$genreliste .'</b>'.'an</p>';
 ?>
 <?php
 /*Spiel auf folgenden Plattformen verfügbar*/
