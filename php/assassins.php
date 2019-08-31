@@ -35,21 +35,13 @@ while($row = mysqli_fetch_object($data)){
 	$bildlink = implode($bildarray);
 	$spielid = $row->idSpiel;
 	#echo $spielid . '<br>';
-	echo '<table class="table table-striped">';
-	echo '<thead>';
-	echo '<tr>';
-	echo '<th>'.$row->Spielname.'</th>';
-	echo '<th>'."Genres:".'</th>';
-	echo '<th>'."Beschreibung:".'</th>';
-	echo '<th>'."Erscheinungsdatum:".'</th>';
-	echo '<th>'."Publisher:".'</th>';
-	echo '<th>'."Plattform:".'</th>';
-	echo '<th>'."Spielzeit (ca.):".'</th>';
-	echo '</tr>';
-	echo '</thead>';
-	echo '<tbody>';
-	echo '<tr>';
-	echo '<td>'.'<img src="'.$bildlink.'"style="max-height:100%;max-width:100%;"/>'.'</td>';
+	echo '<div class="card" style="width: 18rem;">';
+	echo '<img src="..." class="card-img-top" alt="...">';
+	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
+	echo '<p class="card-text">'.'Genres:'.$genresqlliste.'</p>';
+	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</th>';
+	echo '</div>';
+	echo '</div>';
 	#Generierung der Abfrage für die einzelnen Genres des Titels
 	$sqlg = "SELECT Genre FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE idSpiel LIKE '$spielid'";
 	$genresql = $dbm->query($sqlg);
