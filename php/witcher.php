@@ -1,8 +1,9 @@
 <?php include('../inc/header.php');
 
-include('../inc/db.php');
+
 
 include('../inc/db.php');
+
 <div class="row">
 		<div class="col-12 mx-5 my-5">
 			<h1 class="display-3 text-center my-5">The Witcher</h1>
