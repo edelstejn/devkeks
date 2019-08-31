@@ -39,7 +39,11 @@ while($row = mysqli_fetch_object($data)){
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
 	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
+	echo '<p class="card-text">'.$row->ReleaseDate.'</p>';
+	echo '<p class="card-text">'.$row->Publisher.'</p>';
 	echo '<p class="card-text">'.$genresqlliste.'</p>';
+	echo '<p class="card-text">'.$plattsqlliste.'</p>';
+	echo '<p class="card-text">'.$row->Spielzeit.'</p>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
 	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
 	echo '</div>';
