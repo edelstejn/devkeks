@@ -2,16 +2,18 @@
 
 include('../inc/db.php');
 
-
-echo '<h1>Red Dead Redemption</h1>';
-
-
-echo '<p>Red Dead Redemption ist eine von Rockstar Games entwickelte Videospielreihe aus dem Action-Adventure-Genre mit Open World für die Spielekonsolen PlayStation und Xbox. 
+include('../inc/db.php');
+<div class="row">
+		<div class="col-12 mx-5 my-5">
+			<h1 class="display-3 text-center my-5">Red Dead Redemption</h1>
+			<p class="lead mx-5">Red Dead Redemption ist eine von Rockstar Games entwickelte Videospielreihe aus dem Action-Adventure-Genre mit Open World für die Spielekonsolen PlayStation und Xbox. 
 Die Serie umfasst drei Titel: Red Dead Revolver (2004), Red Dead Redemption (2010) und Red Dead Redemption 2 (2018). 
 Alle Titel sind inhaltlich im Wilden Westen angesiedelten und überzeugen durch originelle Geschichten, authentische Dialoge sowie eine lebendige und optisch Ansprechende Spielwelt. 
 Spielerisch bieten die Titel von romantischen Ritten durch pittoreske Landschaften bis hin zu wilden Schiesserein alles was das Herz des Westernfans begehrt. 
 Gespielt wird aus einer klassischen Third-Person Ansicht wobei beim neuesten Teil der Reihe der Spieler die Kameraansicht auch zwischen erster und dritter Person dynamisch wechseln kann. </p><br>';
-
+</p>
+		</div>
+	</div>
 
 $reiheid = 1500;
 
