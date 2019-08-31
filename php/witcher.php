@@ -1,9 +1,5 @@
 <?php include('../inc/header.php');
-
-
-
 include('../inc/db.php');
-
 <div class="row">
 		<div class="col-12 mx-5 my-5">
 			<h1 class="display-3 text-center my-5">The Witcher</h1>
@@ -16,7 +12,6 @@ Die Reihe überzeugt durch ihre immer wieder bahnbrechende Optik und die grandio
 Die Spiele lassen sich aus der Third Person spielen und überzeuge mit einem dynamischen Kampfsystem. Jeder Liebhaber von Rollenspielen sollte sich an The Wichter versuchen.</p>
 		</div>
 	</div>
-
 
 $reiheid = 1501;
 
