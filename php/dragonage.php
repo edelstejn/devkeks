@@ -1,11 +1,10 @@
 <?php include('../inc/header.php');
 
 include('../inc/db.php');
-
-
-echo '<h1>Dragon Age</h1>';
-
-echo'<p>Die herrschenden Magier des Imperiums Tevinter drangen auf der Suche nach einem mächtigen magischen Ort, der Goldenen Stadt, der Wohnstätte des Erbauers, einst mit Hilfe der Blutmagie ins Nichts ein. 
+<div class="row">
+		<div class="col-12 mx-5 my-5">
+			<h1 class="display-3 text-center my-5">Dragon Age</h1>
+			<p class="lead mx-5">Die herrschenden Magier des Imperiums Tevinter drangen auf der Suche nach einem mächtigen magischen Ort, der Goldenen Stadt, der Wohnstätte des Erbauers, einst mit Hilfe der Blutmagie ins Nichts ein. 
 Dort wurden sie zwar fündig, doch machten sie durch den Aufenthalt eine Verwandlung durch und wurden in ihre Heimat Thedas zurückgeschleudert, aus ihnen wurden die Ersten der dunklen Brut. 
 Da sie das Tageslicht nicht ertrugen, zogen sie sich unter die Erde zurück. 
 Dort stießen sie auf Dumat, einen der sieben alten Götter, den sie befreiten und der anschließend in Gestalt eines Drachen als erster Erzdämon die Führung über die dunkle Brut übernahm. 
@@ -14,8 +13,9 @@ Nahezu das gesamte unterirdische Zwergenkönigreich wurde von den Kreaturen übe
 Als sie ihre Herrschaft an die Oberfläche auszudehnen versuchten, konnten sie durch den neugegründeten Orden der Grauen Wächter zurückgeschlagen werden, der den Erzdämon erschlug und die dunkle Brut somit eines Großteils ihrer Stärke beraubte. 
 Mit der Zurückschlagung dieser sogenannten ersten Verderbnis zog sich die dunkle Brut wieder in die Tiefen Wege zurück, um nach den anderen alten Göttern zu suchen. 
 Jedes Mal, wenn sie einen von ihnen befreien können, übernimmt dieser als neuer Erzdämon die Herrschaft über die dunkle Brut und führt sie in einer neuen Welle der Verderbnis an die Oberfläche. 
-Dies ist die Geschichte auf der das Fantasy Rollespiel von den Entwicklern Bioware fußt.  Dragon Age ist eines der besten Rollespielreighen der letzten Jahre und zieht den Spieler mit seiner umfangreichen Historie und Entscheidungfreiheit in den Bann.</p>';
-
+Dies ist die Geschichte auf der das Fantasy Rollespiel von den Entwicklern Bioware fußt.  Dragon Age ist eines der besten Rollespielreighen der letzten Jahre und zieht den Spieler mit seiner umfangreichen Historie und Entscheidungfreiheit in den Bann.</p>
+		</div>
+	</div>
 
 $reiheid = 1508;
 
