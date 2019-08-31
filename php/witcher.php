@@ -1,4 +1,5 @@
 <?php include('../inc/header.php');
+
 include('../inc/db.php');
 <div class="row">
 		<div class="col-12 mx-5 my-5">
