@@ -15,7 +15,25 @@ In spannenden Gefechten kämpft Commander Sheperd um die Zukunft der Menschheit 
 		</div>
 	</div>
 
-
+<?php include('inc/header.php'); ?>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 mx-5 my-5">
+			<h1 class="display-3 text-center my-5">Mass Effect</h1>
+			<p class="lead mx-5">Die Spiele der Mass-Effect-Reihe werden von dem Entwicklerstudio BioWare entwickelt und sind im Genre der Third-Person Action-Rollenspiele angesiedelt. 
+Bisher wurden vier Titel veröffentlich von denen zwei diverse Auszeichnungen und Preise erhielten. 
+Die Reihe zeichnet sich durch ihre cineastischen Zwischensequenzen und die tiefgründigen Charaktere und Dialoge aus. 
+Der Spieler schlüpft in die Haut des Commander Sheperds, dieser wird durch eine Verknüpfung von Ereignissen vor schwierige Entscheidungen gestellt  die die  Zukunft des Universums verändern. 
+Mit Liebe zum Detail schafft BioWare in den Mass Effect -Spielen eine dynamische und lebendige Sci-Fi Welt die durch ihre Kulisse und Bewohner den Spieler in den Bann zieht. 
+In spannenden Gefechten kämpft Commander Sheperd um die Zukunft der Menschheit und das Fortbestehen der Welt.</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col mx-5 my-5">
+			<?php include('inc/db.php');	
+	
 $reiheid = 1509;
 
 $genre = "SELECT * FROM Spiel
