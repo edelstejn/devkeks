@@ -35,6 +35,25 @@ while($row = mysqli_fetch_object($data)){
 	$bildlink = implode($bildarray);
 	$spielid = $row->idSpiel;
 	#echo $spielid . '<br>';
+	#Generierung der Abfrage für die einzelnen Genres des Titels
+	$sqlg = "SELECT Genre FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE idSpiel LIKE '$spielid'";
+	$genresql = $dbm->query($sqlg);
+	while ($grow = mysqli_fetch_object($genresql)){
+		$genresqlarray[] = $grow->Genre;
+	}
+	$genresqlrein = array_unique ($genresqlarray);
+	$genresqlliste = implode(", ", $genresqlrein);
+	unset($genresqlarray);
+	#Generierung der Abfrage für die einzelnen Plattformen des Titels
+	$plattsql ="SELECT Plattform FROM Spiel INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform WHERE idSpiel LIKE '$spielid'";
+	$plattsqldata = $dbm->query($plattsql);
+	while ($prow = mysqli_fetch_object($plattsqldata)){
+		$plattsqlarray[] = $prow->Plattform;
+	}
+	$plattsqlrein = array_unique ($plattsqlarray);
+	$plattsqlliste = implode(", ", $plattsqlrein);
+	unset($plattsqlarray);
+	unset($bildarray);
 	echo '<div class="card" style="width: 30rem;">';
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
@@ -48,35 +67,6 @@ while($row = mysqli_fetch_object($data)){
 	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
 	echo '</div>';
 	echo '</div>';
-	#Generierung der Abfrage für die einzelnen Genres des Titels
-	$sqlg = "SELECT Genre FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE idSpiel LIKE '$spielid'";
-	$genresql = $dbm->query($sqlg);
-	while ($grow = mysqli_fetch_object($genresql)){
-		$genresqlarray[] = $grow->Genre;
-	}
-	$genresqlrein = array_unique ($genresqlarray);
-	$genresqlliste = implode(", ", $genresqlrein);
-	unset($genresqlarray);
-	echo '<td>'.$genresqlliste.'</td>';
-	echo '<td>'.$row->Kurzbeschreibung.'</td>';
-	echo '<td>'.$row->ReleaseDate.'</td>';
-	echo '<td>'.$row->Publisher.'</td>';
-	#Generierung der Abfrage für die einzelnen Plattformen des Titels
-	$plattsql ="SELECT Plattform FROM Spiel INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform WHERE idSpiel LIKE '$spielid'";
-	$plattsqldata = $dbm->query($plattsql);
-	while ($prow = mysqli_fetch_object($plattsqldata)){
-		$plattsqlarray[] = $prow->Plattform;
-	}
-	$plattsqlrein = array_unique ($plattsqlarray);
-	$plattsqlliste = implode(", ", $plattsqlrein);
-	echo '<td>'.$plattsqlliste.'</td>';
-	echo '<td>'.$row->Spielzeit." Std.".'</td>';
-	echo '</tr>';
-	echo '</tbody>';
-	unset($plattsqlarray);
-	unset($bildarray);
-	echo "</table>";
-	echo "<br>";
 }
 echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 include('../inc/footer.php');
