@@ -103,6 +103,6 @@ echo "<br>";
 $dbm->close();
 ?>
 </div>
-	</div>
+</div>
 </div>
 <?php include('inc/footer.php'); ?>
