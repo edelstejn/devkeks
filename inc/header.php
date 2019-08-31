@@ -42,8 +42,7 @@
 			<a class="nav-link" href="php/dragonage.php">Dragon Age</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="php/masseffect.php">Mass Effect</a>
-			
+			<a class="nav-link" href="php/masseffect.php">Mass Effect</a>	
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="php/impressum.php">Impressum</a>
