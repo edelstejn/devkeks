@@ -2,17 +2,20 @@
 
 include('../inc/db.php');
 
-
-echo '<h1>The Elder Scrolls</h1>';
-
-echo '<p> The Elder Scrolls ist eine Computerspielreihe des US-amerikanischen Computerspielherstellers Bethesda Softworks.
+include('../inc/db.php');
+<div class="row">
+		<div class="col-12 mx-5 my-5">
+			<h1 class="display-3 text-center my-5">The Elder Scrol</h1>
+			<p class="lead mx-5">The Elder Scrolls ist eine Computerspielreihe des US-amerikanischen Computerspielherstellers Bethesda Softworks.
 Die hauptsächlich aus Computer-Rollenspielen bestehende Serie umfasst derzeit zwölf Titel für PC, Spielkonsolen und Mobiltelefone.
 Daneben existieren zwei Romane.  Die Spielereihe existiert seit 1994 und hat sich seitdem zu einer der berühmtesten Marken entwickelt. 
 Inhaltlich spielen alle Titel sich in der Welt „Nirn“ ab, ein riesiges Reich voller Fabelwesen und Abenteuer. 
 Die Spiele Oblivion und Skyrim brachten der Serie ihren Durchbruch. 
 Durch Liebe zum Detail und einer riesigen Welt hoben sich die Werke von der damaligen Konkurrenz ab und erhielten diverse Preise und Auszeichnungen. 
 In jedem Elder Scrolls spielt man einen selbstkreierten Charakter, der im Laufe der Geschichte zum Schicksalsträger für die Spielwelt wird. 
-Der Titel lässt sich aus sowohl Ego- als auch Third-Person Perspektive spielen. </p>';
+Der Titel lässt sich aus sowohl Ego- als auch Third-Person Perspektive spielen.</p>
+		</div>
+	</div>
 
 $reiheid = 1507;
 
