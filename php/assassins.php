@@ -17,13 +17,6 @@ Das Spiel lässt sich aus der Third-person betrachten und bietet dem Spieler vie
 		</div>
 	</div>
 	
-	<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-</div>
-	<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
-</div>
-
 	$reiheid = 1504;
 
 $genre = "SELECT * FROM Spiel
