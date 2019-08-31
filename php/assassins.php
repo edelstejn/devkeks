@@ -4,7 +4,8 @@ include('../inc/db.php');
 
 <div class="row">
 		<div class="col-12 mx-5 my-5">
-			<h1 class="display-3 text-center my-5">Assassins Creed</h1>
+			<span class="border-left-100"></span>
+	                <h1 class="display-3 text-center my-5">Assassins Creed</h1>
 			<p class="lead mx-5">Die Assassin’s-Creed-Reihe ist eine Computerspielserie des französischen Publishers Ubisoft aus dem Genre Action-Adventure.
 Sie besteht seit 2007 mit der Veröffentlichung des gleichnamigen Spiels und umfasst elf Hauptspiele und zahlreiche Ableger. 
 Die meisten Teile der Serie wurden vom kanadischen Studio Ubisoft Montreal entwickelt.
@@ -14,7 +15,7 @@ Auch andere Ereignisse der Zeit werden integriert, so löst der Spieler unbeabsi
 Der Handlungsstrang, der sich durch die Serie zieht, ist der seit Jahrhunderten andauernde Konflikt zwischen Assassinen und Templern, wobei der Spieler zumeist einen Assassinen verkörpert. 
 Die Reihe erzielt durch ihre oftmals realistische Einbindung von fiktiven Elementen in den zeithistorischen Kontext eine gelungene Immersion. 
 Das Spiel lässt sich aus der Third-person betrachten und bietet dem Spieler viel Bewegungsspielraum, so lässt sich fast jedes Gebäude erklimmen.Hier folgen Einträge Videospielreihen der letzten Jahre die uns besonders gut gefallen, einfach anklicken und schauen, auf dieser Seite befinden sich alle Titel die in der Datenbank vorhanden sind. Von Western bis Science-Fiction ist für jeden etwas dabei. Um mehr über einzelene Reihen zu erfahren klicken sie einfach auf den Titel in der oberen Navigationsleiste, viel Spaß! </p>
-	<span class="border-left-100"></span>	
+	
 	     </div>
 	</div>
 	
