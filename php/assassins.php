@@ -13,6 +13,8 @@ while ($row = mysqli_fetch_object($genredata)){
 $genrerein = array_unique ($genrearray);
 $genreliste = implode(", ", $genrerein);
 echo '<p class="mx-5>'.'Die Spiele dieser Reihe gehören den Genre/s'.'<b>'.$genreliste .'</b>'.'an</p>';
+?>
+<?php
 /*Spiel auf folgenden Plattformen verfügbar*/
 /*Select plattform value from DB*/ 
 $platt ="SELECT * FROM Spiel INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
@@ -23,6 +25,8 @@ while ($row = mysqli_fetch_object($plattdata)){
 $plattrein = array_unique ($plattarray);
 $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, Wert2 "und" Wert3*/
 echo '<p class="mx-5>'.'Die Spiele dieser Reihe sind auf den Plattformen '.'<b>' .$plattliste . '</b>'.' erschienen.'.'</p></div></div>';
+?>
+<?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
 $data = $dbm->query($sql);
