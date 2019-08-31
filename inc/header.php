@@ -54,9 +54,3 @@
 		</form>
 	</div>
 </nav>
-<div class="row container-fluid">
-	<div class="col mx-5 my-5">
-		<h1 class="display-3 my-5 text-center">Assassins Creed</h1>
-		<p class="lead mx-5 mb-5 text-center">Die Assassin’s-Creed-Reihe ist eine Computerspielserie des französischen Publishers Ubisoft aus dem Genre Action-Adventure.<br>Sie besteht seit 2007 mit der Veröffentlichung des gleichnamigen Spiels und umfasst elf Hauptspiele und zahlreiche Ableger.</p><p class="mx-5">Die meisten Teile der Serie wurden vom kanadischen Studio Ubisoft Montreal entwickelt.Alle Teile der Reihe sind Open-World-Spiele. Der Großteil der Handlung jedes der Spiele findet in der Vergangenheit in einer bestimmten Region und Epoche statt, wobei auf reale historische Ereignisse eingegangen wird. So trifft der Spieler im Laufe der Missionen auf zahlreiche bekannte Persönlichkeiten der jeweiligen Zeit wie Richard Löwenherz, Saladin, Leonardo da Vinci, Alexander VI. und viele weitere. Auch andere Ereignisse der Zeit werden integriert, so löst der Spieler unbeabsichtigt die Erdbeben in Haiti (1751) und das Erdbeben von Lissabon 1755 aus.</p><p class="mx-5">Der Handlungsstrang, der sich durch die Serie zieht, ist der seit Jahrhunderten andauernde Konflikt zwischen Assassinen und Templern, wobei der Spieler zumeist einen Assassinen verkörpert. Die Reihe erzielt durch ihre oftmals realistische Einbindung von fiktiven Elementen in den zeithistorischen Kontext eine gelungene Immersion. Das Spiel lässt sich aus der Third-person betrachten und bietet dem Spieler viel Bewegungsspielraum, so lässt sich fast jedes Gebäude erklimmen.</p>
-	</div>
-</div>
