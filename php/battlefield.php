@@ -1,14 +1,16 @@
 <?php include('../inc/header.php');
 
 include('../inc/db.php');
-
-
-echo '<h1>Battlefield</h1>';
-
-echo'<p> Die Battlefield-Reihe ist ein Franchise von Computerspielen, das bisher aus zwölf Spielen besteht. 
+<div class="row">
+		<div class="col-12 mx-5 my-5">
+			<h1 class="display-3 text-center my-5">Battlefeld</h1>
+			<p class="lead mx-5">Die Battlefield-Reihe ist ein Franchise von Computerspielen, das bisher aus zwölf Spielen besteht. 
 Die Serie zählt zu den erfolgreichsten FPS (First-Person-Shootern) und ist bei seinen Fans beliebt wegen der spannenden Mulitplayer Gefechte die bis zu 64 Spielern fassen sowie der akkuraten Darstellung von Kriegsmaschinerie und Waffen.
 Auch wenn die Serie von tieferen philosophischen Ideen befreit ist so bietet sie denn noch kurzweiligen Spaß für zwischendurch mit Freunden.
-Die verscheidenen Titel beschäftigen sich mit diversen historischen oder fiktiven Zeitgeschenissen. </p>';
+Die verscheidenen Titel beschäftigen sich mit diversen historischen oder fiktiven Zeitgeschenissen. </p>
+		</div>
+	</div>
+
 
 $reiheid = 1503;
 
