@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_object($genredata)){
 }
 $genrerein = array_unique ($genrearray);
 $genreliste = implode(", ", $genrerein);
-echo '<p class="mx-5">'.'Die Spiele dieser Reihe gehören den Genre/s'.'<br><b>'.$genreliste .'</b>'.'an</p>';
+echo '<p class="mx-5">'.'Die Spiele dieser Reihe gehören den folgenden Genre/s an:'.'<br><b>'.$genreliste .'</b></p>';
 ?>
 <?php
 /*Spiel auf folgenden Plattformen verfügbar*/
@@ -24,7 +24,7 @@ while ($row = mysqli_fetch_object($plattdata)){
 }
 $plattrein = array_unique ($plattarray);
 $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, Wert2 "und" Wert3*/
-echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den Plattformen '.'<b>' .$plattliste . '</b>'.' erschienen.'.'</p></div></div>';
+echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b>' .$plattliste . '</b></p></div></div>';
 ?>
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
