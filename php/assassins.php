@@ -30,6 +30,7 @@ $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, We
 echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b class="text-danger">' .$plattliste . '</b></p></div></div>';
 ?>
 <div class="row container-fluid justify-content-center">
+<div class="card-group">
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
@@ -58,24 +59,25 @@ while($row = mysqli_fetch_object($data)){
 	$plattsqlliste = implode(", ", $plattsqlrein);
 	unset($plattsqlarray);
 	unset($bildarray);
-	echo '<div class="col-sm-3 mx-5 mb-5">';
 	echo '<div class="card" style="width: 30rem;">';
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
 	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
-	echo '<p class="card-text">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</p>';
-	echo '<p class="card-text">'.'<b>Publisher: </b>'.$row->Publisher.'</p>';
-	echo '<p class="card-text">'.'<b>Genre: </b>'.$genresqlliste.'</p>';
-	echo '<p class="card-text">'.'<b>Plattformen: </b>'.$plattsqlliste.'</p>';
-	echo '<p class="card-text">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</p>';
+	echo '<ul class="list-group list-group-flush mb-3">';
+	echo '<li class="list-group-item">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</li>';
+	echo '<li class="list-group-item">'.'<b>Publisher: </b>'.$row->Publisher.'</li>';
+	echo '<li class="list-group-item">'.'<b>Genre: </b>'.$genresqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Plattformen: </b>'.$plattsqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</li>';
+	echo '</ul>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
 	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
-	echo '</div>';
 	echo '</div>';
 	echo '</div>';
 }
 echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 ?>
+</div>
 </div>
 <?php include('../inc/footer.php');
 ?>
