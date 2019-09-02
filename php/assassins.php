@@ -32,9 +32,9 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 ?>
 <hr>
 </div>
-<div class="row container-fluid justify-content-center">
-	<div class="lead mb-5 strong">Alle Spiele dieser Spielereihe:</div>
 </div>
+<div class="row">
+	<div class="lead mb-5 strong">Alle Spiele dieser Spielereihe:</div>
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
@@ -86,7 +86,6 @@ while($row = mysqli_fetch_object($data)){
 }
 echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 ?>
-</div>
 </div>
 <?php include('../inc/footer.php');
 ?>
