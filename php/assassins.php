@@ -27,7 +27,6 @@ while ($row = mysqli_fetch_object($plattdata)){
 $plattrein = array_unique ($plattarray);
 $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, Wert2 "und" Wert3*/
 echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b class="text-danger">' .$plattliste . '</b></p></div></div>';
-echo '<div class="row>';
 ?>
 <div class="row container-fluid">
 <?php
