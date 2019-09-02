@@ -34,7 +34,9 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 </div>
 </div>
 <div class="row container-fluid">
-	<p class="lead mb-5 strong text-center">Alle Spiele dieser Spielereihe:</p>
+	<div class="col">
+		<p class="lead mb-5 strong text-center">Alle Spiele dieser Spielereihe:</p>
+	</div>
 </div>
 <div class="row container-fluid">
 <?php
