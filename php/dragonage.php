@@ -4,7 +4,7 @@ include('../txt/Dragon Age.html');
 ?>
 <?php
 include('../inc/db.php');
-$reiheid = 1504;
+$reiheid = 1508;
 
 /*Spiel folgendem Genre zugeordnet*/
 /*Select genre value from DB*/
