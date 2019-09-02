@@ -87,6 +87,9 @@ while($row = mysqli_fetch_object($data)){
 	echo '<div class="card-footer">';
     echo '<small class="text-muted">Last updated 3 mins ago</small>';
     echo '</div>';
+    echo '<div class="embed-responsive embed-responsive-16by9">';
+    echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>';
+    echo '</div>';
 	echo '</div>';
 	echo '</div>';
 }
