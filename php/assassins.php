@@ -33,8 +33,10 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 <hr>
 </div>
 </div>
-<div class="row">
+<div class="row container-fluid">
 	<div class="lead mb-5 strong">Alle Spiele dieser Spielereihe:</div>
+</div>
+<div class="row container-fluid">
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
