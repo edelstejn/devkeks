@@ -63,11 +63,11 @@ while($row = mysqli_fetch_object($data)){
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
 	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
-	echo '<p class="card-text">'.'Erschienen am: '.$row->ReleaseDate.'</p>';
-	echo '<p class="card-text">'.'Publisher: '.$row->Publisher.'</p>';
-	echo '<p class="card-text">'.'Genre: '.$genresqlliste.'</p>';
-	echo '<p class="card-text">'.'Plattformen: '.$plattsqlliste.'</p>';
-	echo '<p class="card-text">'.'Spielzeit ca.: '.$row->Spielzeit.'</p>';
+	echo '<p class="card-text">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</p>';
+	echo '<p class="card-text">'.'<b>Publisher: </b>'.$row->Publisher.'</p>';
+	echo '<p class="card-text">'.'<b>Genre: </b>'.$genresqlliste.'</p>';
+	echo '<p class="card-text">'.'<b>Plattformen: </b>'.$plattsqlliste.'</p>';
+	echo '<p class="card-text">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.'</p>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
 	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
 	echo '</div>';
