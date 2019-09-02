@@ -1,9 +1,6 @@
 <?php
 include('../inc/header.php');
 include('../txt/assas.html');
-?>
-
-<?php
 include('../inc/db.php');
 $reiheid = 1504;
 

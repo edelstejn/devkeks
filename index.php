@@ -1,94 +1,57 @@
-<?php include('inc/header.php');?>
+<?php
+include('../inc/header.php');
+include('../txt/assas.html');
+?>
 <?php include('inc/db.php');
-# Die variable $suchergebnis soll mit dem Formular befüllt werden, sodass die sql-Abfrage dann nach dem Namen des Spiels in der Datenbank sucht. Cool wärs auch, wenn ne Fehlermeldung wie "Leider führte die Suche zu keinem Ergebnis"
-# wenn die Suche keine Treffer ausgibt. Dazu bin ich aber einfach zu dumm.
-$suchergebnis = 'batt';
-
-$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Publisher, Cover FROM Spiel
-INNER JOIN Publisher ON Publisher_idPublisher = idPublisher
-WHERE Spielname LIKE '%%'
-ORDER BY ReleaseDate DESC
-";
+$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink, videoURL FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
 $data = $dbm->query($sql);
-
-#TEst
-
-while($row = mysqli_fetch_object($data))
-{
-$bildarray[] = $row->Cover;
-$bildlink = implode($bildarray);
-
-$spielid = $row->idSpiel;
-#echo $spielid . '<br>';
-echo '<table class="table table-borderless">';
-echo '<thead>';
-echo '<tr>';
-echo '<th>'.$row->Spielname.'</th>';
-echo '<th>'."Genres:".'</th>';
-echo '<th>'."Beschreibung:".'</th>';
-echo '<th>'."Erscheinungsdatum:".'</th>';
-echo '<th>'."Publisher:".'</th>';
-echo '<th>'."Plattform:".'</th>';
-echo '<th>'."Spielzeit (ca.):".'</th>';
-echo '</tr>';
-echo '</thead>';
-echo '<tbody>';
-echo '<tr>';
-echo '<td>'.'<img src="'. $bildlink . '" style="max-height:100%; max-width:100%"/>'.'</td>';
-
-#Generierung der Abfrage für die einzelnen Genres des Titels
-$sqlg = "SELECT Genre FROM Spiel
-INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel
-INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre
-WHERE idSpiel LIKE '$spielid'";
-
-$genresql = $dbm->query($sqlg);
-
-while ($grow = mysqli_fetch_object($genresql))
-{
-$genresqlarray[] = $grow->Genre;
+while($row = mysqli_fetch_object($data)){
+	$bildarray[] = $row->Cover;
+	$bildlink = implode($bildarray);
+	$spielid = $row->idSpiel;
+	#echo $spielid . '<br>';
+	#Generierung der Abfrage für die einzelnen Genres des Titels
+	$sqlg = "SELECT Genre FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE idSpiel LIKE '$spielid'";
+	$genresql = $dbm->query($sqlg);
+	while ($grow = mysqli_fetch_object($genresql)){
+		$genresqlarray[] = $grow->Genre;
+	}
+	$genresqlrein = array_unique ($genresqlarray);
+	$genresqlliste = implode(", ", $genresqlrein);
+	unset($genresqlarray);
+	#Generierung der Abfrage für die einzelnen Plattformen des Titels
+	$plattsql ="SELECT Plattform FROM Spiel INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform WHERE idSpiel LIKE '$spielid'";
+	$plattsqldata = $dbm->query($plattsql);
+	while ($prow = mysqli_fetch_object($plattsqldata)){
+		$plattsqlarray[] = $prow->Plattform;
+	}
+	$plattsqlrein = array_unique ($plattsqlarray);
+	$plattsqlliste = implode(", ", $plattsqlrein);
+	unset($plattsqlarray);
+	unset($bildarray);
+	echo '<div class="col-sm-3 mr-3 mb-5">';
+	echo '<div class="card" style="width: 20<rem;">';
+	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
+	echo '<div class="card-body">';
+	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
+	echo '<ul class="list-group list-group-flush mb-3">';
+	echo '<li class="list-group-item">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</li>';
+	echo '<li class="list-group-item">'.'<b>Publisher: </b>'.$row->Publisher.'</li>';
+	echo '<li class="list-group-item">'.'<b>Genre: </b>'.$genresqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Plattformen: </b>'.$plattsqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</li>';
+	echo '</ul>';
+	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
+	echo '<a href="'.$row->Kauflink.'" class="btn btn-dark btn-block mr-3" target="_blank">'.'Buy on Steam!'.'</a>';
+	echo '</div>';
+	echo '<div class="card-footer">';
+    echo '<small class="text-muted">Trailer zum Spiel</small>';
+    echo '</div>';
+    echo '<div class="embed-responsive embed-responsive-16by9">';
+    echo '<iframe class="embed-responsive-item" src="'.$row->videoURL.'" allowfullscreen></iframe>';
+    echo '</div>';
+	echo '</div>';
+	echo '</div>';
 }
-
-$genresqlrein = array_unique ($genresqlarray);
-$genresqlliste = implode(", ", $genresqlrein);
-
-unset($genresqlarray);
-
-echo '<td>'.$genresqlliste.'</td>';
-echo '<td>'.$row->Kurzbeschreibung.'</td>';
-echo '<td>'.$row->ReleaseDate.'</td>';
-echo '<td>'.$row->Publisher.'</td>';
-
-#Generierung der Abfrage für die einzelnen Plattformen des Titels
-$plattsql ="Select Plattform FROM Spiel
-INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel
-INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform
-WHERE idSpiel LIKE '$spielid'";
-
-$plattsqldata = $dbm->query($plattsql);
-
-while ($prow = mysqli_fetch_object($plattsqldata))
-{
-$plattsqlarray[] = $prow->Plattform;
-}
-
-$plattsqlrein = array_unique ($plattsqlarray);
-$plattsqlliste = implode(", ", $plattsqlrein);
-
-echo '<td>'.$plattsqlliste.'</td>';
-echo '<td>'.$row->Spielzeit." Std.".'</td>';
-echo '</tr>';
-echo '</tbody>';
-
-unset($plattsqlarray);
-unset($bildarray);
-
-echo "</table>";
-echo "<br>";
-
-}
-
-
-$dbm->close();
 ?>
 <?php include('inc/footer.php'); ?>
