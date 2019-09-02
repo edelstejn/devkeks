@@ -5,7 +5,7 @@ include('inc/db.php');
 ?>
 <?php
 $suchergebnis = 'batt';
-$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Publisher, Cover FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielname LIKE '%%' ORDER BY ReleaseDate DESC";
+$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink, videoURL FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielname LIKE '%%' ORDER BY ReleaseDate DESC";
 $data = $dbm->query($sql);
 while($row = mysqli_fetch_object($data)){
 	$bildarray[] = $row->Cover;
