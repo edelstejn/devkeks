@@ -2,6 +2,8 @@
 include('inc/header.php');
 /*include ('txt/indexText.html');*/
 include('inc/db.php');
+?>
+<?php
 $suchergebnis = 'batt';
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Publisher, Cover FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielname LIKE '%%' ORDER BY ReleaseDate DESC";
 $data = $dbm->query($sql);
