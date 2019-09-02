@@ -2,6 +2,7 @@
 include('../inc/header.php');
 include('../txt/assas.html');
 ?>
+
 <?php
 include('../inc/db.php');
 $reiheid = 1504;
@@ -30,6 +31,9 @@ $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, We
 echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b class="text-danger">' .$plattliste . '</b></p></div></div>';
 ?>
 <div class="row container-fluid justify-content-center">
+	<div class="col">
+		<h2>Alle Spiele dieser Spielreihe:</h2>
+	</div>
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
