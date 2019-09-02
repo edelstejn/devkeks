@@ -1,6 +1,6 @@
 <?php
 include('../inc/header.php');
-include('../txt/assas.html');
+/*include('../txt/indexText.html');*/
 ?>
 <?php include('inc/db.php');
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink, videoURL FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
