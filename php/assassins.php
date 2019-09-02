@@ -81,10 +81,10 @@ while($row = mysqli_fetch_object($data)){
 	echo '<li class="list-group-item">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</li>';
 	echo '</ul>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
-	echo '<a href="'.$row->Kauflink.'" class="btn btn-dark mr-3" target="_blank">'.'Buy on Steam!'.'</a>';
+	echo '<a href="'.$row->Kauflink.'" class="btn btn-dark btn-block mr-3" target="_blank">'.'Buy on Steam!'.'</a>';
 	echo '</div>';
 	echo '<div class="card-footer">';
-    echo '<small class="text-muted">Last updated 3 mins ago</small>';
+    echo '<small class="text-muted">Trailer zum Spiel</small>';
     echo '</div>';
     echo '<div class="embed-responsive embed-responsive-16by9">';
     echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>';
