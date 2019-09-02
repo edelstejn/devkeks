@@ -18,34 +18,34 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	<ul class="navbar-nav mr-auto ml-lg-5">
 		<li class="nav-item">
-			<a class="nav-link" href="/assassins.php">Assassins Creed</a>
+			<a class="nav-link" href="php/assassins.php">Assassins Creed</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/darksouls.php">Dark Souls</a>
+			<a class="nav-link" href="php/darksouls.php">Dark Souls</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/battlefield.php">Battlefield</a>
+			<a class="nav-link" href="php/battlefield.php">Battlefield</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/gta.php">Grand Theft Auto</a>
+			<a class="nav-link" href="php/gta.php">Grand Theft Auto</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/reddead.php">Red Dead Redemption</a>
+			<a class="nav-link" href="php/reddead.php">Red Dead Redemption</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/witcher.php">The Witcher</a>
+			<a class="nav-link" href="php/witcher.php">The Witcher</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/elderscrolls.php">The Elder Scrolls</a>
+			<a class="nav-link" href="php/elderscrolls.php">The Elder Scrolls</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/dragonage.php">Dragon Age</a>
+			<a class="nav-link" href="php/dragonage.php">Dragon Age</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/masseffect.php">Mass Effect</a>	
+			<a class="nav-link" href="php/masseffect.php">Mass Effect</a>	
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/impressum.php">Impressum</a>
+			<a class="nav-link" href="php/impressum.php">Impressum</a>
 		</li>
 	</ul>
 		<form class="form-inline my-2 my-lg-0 mr-lg-5">
