@@ -67,7 +67,7 @@ while($row = mysqli_fetch_object($data)){
 	echo '<p class="card-text">'.'<b>Publisher: </b>'.$row->Publisher.'</p>';
 	echo '<p class="card-text">'.'<b>Genre: </b>'.$genresqlliste.'</p>';
 	echo '<p class="card-text">'.'<b>Plattformen: </b>'.$plattsqlliste.'</p>';
-	echo '<p class="card-text">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.'</p>';
+	echo '<p class="card-text">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</p>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
 	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
 	echo '</div>';
