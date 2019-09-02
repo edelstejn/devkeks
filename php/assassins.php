@@ -41,12 +41,13 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 <div class="row container-fluid justify-content-center">
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
-$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
+$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
 $data = $dbm->query($sql);
 while($row = mysqli_fetch_object($data)){
 	$bildarray[] = $row->Cover;
 	$bildlink = implode($bildarray);
 	$spielid = $row->idSpiel;
+	$buylink = $row->Kauflink;
 	#echo $spielid . '<br>';
 	#Generierung der Abfrage für die einzelnen Genres des Titels
 	$sqlg = "SELECT Genre FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE idSpiel LIKE '$spielid'";
@@ -68,7 +69,7 @@ while($row = mysqli_fetch_object($data)){
 	unset($plattsqlarray);
 	unset($bildarray);
 	echo '<div class="col-sm-3 mr-4 mb-3">';
-	echo '<div class="card" style="width: 30rem;">';
+	echo '<div class="card" style="width: 20<rem;">';
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
 	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
@@ -85,12 +86,13 @@ while($row = mysqli_fetch_object($data)){
 	echo '</div>';
 	echo '<div class="card-footer">';
     echo '<small class="text-muted">Last updated 3 mins ago</small>';
+    echo '<p>'.$row->Kauflink.'</p>';
     echo '</div>';
 	echo '</div>';
 	echo '</div>';
 }
-echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 ?>
+<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 </div>
 <?php include('../inc/footer.php');
 ?>
