@@ -5,6 +5,7 @@ include('inc/db.php');
 ?>
 </div>
 </div>
+<div class="row container-fluid justify-content-center">
 <?php
 $suchergebnis = 'batt';
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink, videoURL FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielname LIKE '%%' ORDER BY ReleaseDate DESC";
