@@ -48,9 +48,5 @@
 			<a class="nav-link" href="../php/impressum.php">Impressum</a>
 		</li>
 	</ul>
-		<form class="form-inline my-2 my-lg-0 mr-lg-5">
-    		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" action="search.php" method="post">
-    		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Suchen</button>
-		</form>
-	</div>
+  </div>
 </nav>
