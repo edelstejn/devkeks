@@ -73,6 +73,9 @@ while($row = mysqli_fetch_object($data)){
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
 	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
 	echo '</div>';
+	echo '<div class="card-footer">';
+    echo '<small class="text-muted">Last updated 3 mins ago</small>';
+    echo '</div>';
 	echo '</div>';
 	echo '</div>';
 }
