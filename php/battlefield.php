@@ -5,6 +5,7 @@ include('../txt/BFText.html');
 <?php
 include('../inc/db.php');
 $reiheid = 1504;
+
 /*Spiel folgendem Genre zugeordnet*/
 /*Select genre value from DB*/
 $genre = "SELECT * FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
