@@ -34,6 +34,11 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 </div>
 <div class="row container-fluid">
 	<div class="col mb-5">
+		<img src="../bilder/assasspano.jpg" class="img-fluid" alt="Responsive image">
+	</div>
+</div>
+<div class="row container-fluid">
+	<div class="col mb-5">
 		<hr>
 		<p class="lead text-center text-danger">Alle Spiele dieser Spielereihe:</p><hr>
 	</div>
