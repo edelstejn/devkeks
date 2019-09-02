@@ -57,7 +57,7 @@ while($row = mysqli_fetch_object($data)){
 	$plattsqlliste = implode(", ", $plattsqlrein);
 	unset($plattsqlarray);
 	unset($bildarray);
-	echo '<div class="col-sm-4 mx-5 my-5">';
+	echo '<div class="col-sm-4 mx-5">';
 	echo '<div class="card" style="width: 30rem;">';
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
@@ -72,8 +72,8 @@ while($row = mysqli_fetch_object($data)){
 	echo '</div>';
 	echo '</div>';
 }
-echo '</div>';
 echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 ?>
+</div>
 <?php include('../inc/footer.php');
 ?>
