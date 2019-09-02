@@ -80,5 +80,6 @@ while($row = mysqli_fetch_object($data)){
 echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 ?>
 </div>
+</div>
 <?php include('../inc/footer.php');
 ?>
