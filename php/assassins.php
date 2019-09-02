@@ -30,7 +30,6 @@ $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, We
 echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b class="text-danger">' .$plattliste . '</b></p></div></div>';
 ?>
 <div class="row container-fluid justify-content-center">
-<div class="col-sm-3 mx-5 mb-5">
 <div class="card-group">
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
@@ -78,7 +77,6 @@ while($row = mysqli_fetch_object($data)){
 }
 echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 ?>
-</div>
 </div>
 </div>
 <?php include('../inc/footer.php');
