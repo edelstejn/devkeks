@@ -86,7 +86,7 @@ while($row = mysqli_fetch_object($data)){
     echo '<small class="text-muted">Trailer zum Spiel</small>';
     echo '</div>';
     echo '<div class="embed-responsive embed-responsive-16by9">';
-    echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=RaOPz5QLa60" allowfullscreen></iframe>';
+    echo '<iframe class="embed-responsive-item" src="'.$row->videoURL.'" allowfullscreen></iframe>';
     echo '</div>';
 	echo '</div>';
 	echo '</div>';
