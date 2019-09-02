@@ -80,8 +80,8 @@ while($row = mysqli_fetch_object($data)){
 	echo '<li class="list-group-item">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</li>';
 	echo '</ul>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
-	echo '<a class="mx-5" href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
-	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
+	echo '<a href="#" class="btn btn-light mx-5">'.'Buy on Steam!'.'</a>';
+	echo '<a href="#" class="btn btn-primary">'.'Video'.'</a>';
 	echo '</div>';
 	echo '<div class="card-footer">';
     echo '<small class="text-muted">Last updated 3 mins ago</small>';
