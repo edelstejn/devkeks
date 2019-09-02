@@ -29,6 +29,7 @@ $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, We
 echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b class="text-danger">' .$plattliste . '</b></p></div></div>';
 ?>
 <div class="row container-fluid">
+	<div class="col">
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
@@ -75,6 +76,7 @@ while($row = mysqli_fetch_object($data)){
 }
 echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 ?>
+</div>
 </div>
 <?php include('../inc/footer.php');
 ?>
