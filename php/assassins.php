@@ -58,6 +58,7 @@ while($row = mysqli_fetch_object($data)){
 	$plattsqlliste = implode(", ", $plattsqlrein);
 	unset($plattsqlarray);
 	unset($bildarray);
+	echo '<div class="col-sm-4';
 	echo '<div class="card" style="width: 30rem;">';
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
@@ -69,6 +70,7 @@ while($row = mysqli_fetch_object($data)){
 	echo '<p class="card-text">'.$row->Spielzeit.'</p>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
 	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
+	echo '</div>';
 	echo '</div>';
 	echo '</div>';
 }
