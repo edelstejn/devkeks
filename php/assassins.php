@@ -63,7 +63,7 @@ while($row = mysqli_fetch_object($data)){
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
 	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
-	echo '<ul class="list-group list-group-flush">';
+	echo '<ul class="list-group list-group-flush mb-2">';
 	echo '<li class="list-group-item">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</li>';
 	echo '<li class="list-group-item">'.'<b>Publisher: </b>'.$row->Publisher.'</li>';
 	echo '<li class="list-group-item">'.'<b>Genre: </b>'.$genresqlliste.'</li>';
