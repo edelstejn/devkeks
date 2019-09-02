@@ -69,7 +69,7 @@ while($row = mysqli_fetch_object($data)){
 	echo '<li class="card-text">'.'<b>Genre: </b>'.$genresqlliste.'</li>';
 	echo '<li class="card-text">'.'<b>Plattformen: </b>'.$plattsqlliste.'</li>';
 	echo '<li class="card-text">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</li>';
-	echo '</ul>'
+	echo '</ul>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
 	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
 	echo '</div>';
