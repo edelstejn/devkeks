@@ -2,8 +2,6 @@
 include('../inc/header.php');
 include('../txt/assas.html');
 ?>
-<div class="row container-fluid">
-	<div class="col-sm-4 mx-5 my-5">
 <?php
 include('../inc/db.php');
 $reiheid = 1504;
@@ -31,6 +29,7 @@ $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, We
 echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b class="text-danger">' .$plattliste . '</b></p></div></div>';
 echo '<div class="row>';
 ?>
+<div class="row container-fluid">
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
@@ -77,6 +76,5 @@ while($row = mysqli_fetch_object($data)){
 echo '</div>';
 echo '<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
 ?>
-</div></div>
 <?php include('../inc/footer.php');
 ?>
