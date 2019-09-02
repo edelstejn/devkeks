@@ -47,7 +47,6 @@ while($row = mysqli_fetch_object($data)){
 	$bildarray[] = $row->Cover;
 	$bildlink = implode($bildarray);
 	$spielid = $row->idSpiel;
-	$buylink = $row->Kauflink;
 	#echo $spielid . '<br>';
 	#Generierung der Abfrage für die einzelnen Genres des Titels
 	$sqlg = "SELECT Genre FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE idSpiel LIKE '$spielid'";
@@ -87,7 +86,7 @@ while($row = mysqli_fetch_object($data)){
     echo '<small class="text-muted">Trailer zum Spiel</small>';
     echo '</div>';
     echo '<div class="embed-responsive embed-responsive-16by9">';
-    echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>';
+    echo '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'.$row->videoURL.'?rel=0" allowfullscreen></iframe>';
     echo '</div>';
 	echo '</div>';
 	echo '</div>';
