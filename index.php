@@ -1,8 +1,10 @@
 <?php
 include('inc/header.php');
-/*include ('txt/indexText.html');*/
+include ('txt/indexText.html');
 include('inc/db.php');
 ?>
+</div>
+</div>
 <?php
 $suchergebnis = 'batt';
 $sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink, videoURL FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielname LIKE '%%' ORDER BY ReleaseDate DESC";
@@ -38,7 +40,7 @@ $plattsqlliste = implode(", ", $plattsqlrein);
 
 unset($plattsqlarray);
 unset($bildarray);
-echo '<div class="col-sm-3 mr-3 mb-5">';
+	echo '<div class="col-sm-3 mr-3 mb-5">';
 	echo '<div class="card" style="width: 20<rem;">';
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
@@ -64,5 +66,5 @@ echo '<div class="col-sm-3 mr-3 mb-5">';
 }
 $dbm->close();
 ?>
-<!--</div>-->
+</div>
 <?php include('inc/footer.php'); ?>
