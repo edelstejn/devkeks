@@ -68,7 +68,7 @@ while($row = mysqli_fetch_object($data)){
 	$plattsqlliste = implode(", ", $plattsqlrein);
 	unset($plattsqlarray);
 	unset($bildarray);
-	echo '<div class="col-sm-3 mr-4 mb-3">';
+	echo '<div class="col-lg-4 mr-4 mb-3">';
 	echo '<div class="card" style="width: 20<rem;">';
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
