@@ -41,7 +41,7 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 <div class="row container-fluid justify-content-center">
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
-$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
+$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink, videoURL FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
 $data = $dbm->query($sql);
 while($row = mysqli_fetch_object($data)){
 	$bildarray[] = $row->Cover;
