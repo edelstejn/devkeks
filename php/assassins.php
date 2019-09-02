@@ -64,11 +64,11 @@ while($row = mysqli_fetch_object($data)){
 	echo '<div class="card-body">';
 	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
 	echo '<ul class="list-group list-group-flush">';
-	echo '<li class="card-text">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</li>';
-	echo '<li class="card-text">'.'<b>Publisher: </b>'.$row->Publisher.'</li>';
-	echo '<li class="card-text">'.'<b>Genre: </b>'.$genresqlliste.'</li>';
-	echo '<li class="card-text">'.'<b>Plattformen: </b>'.$plattsqlliste.'</li>';
-	echo '<li class="card-text">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</li>';
+	echo '<li class="list-group-item">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</li>';
+	echo '<li class="list-group-item">'.'<b>Publisher: </b>'.$row->Publisher.'</li>';
+	echo '<li class="list-group-item">'.'<b>Genre: </b>'.$genresqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Plattformen: </b>'.$plattsqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</li>';
 	echo '</ul>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
 	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
