@@ -3,7 +3,7 @@ include('../inc/header.php');
 include('../txt/assas.html');
 ?>
 <div class="row container-fluid">
-	<div class="col mx-5 my-5">
+	<div class="col-sm-4 mx-5 my-5">
 <?php
 include('../inc/db.php');
 $reiheid = 1504;
