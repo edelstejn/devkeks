@@ -94,7 +94,7 @@ while($row = mysqli_fetch_object($data)){
 	echo '</div>';
 }
 ?>
-<img alt="panorama" src="../bilder/skyerim_tes.jpg" style="height:400px; width:2000px"/>';
+<img alt="panorama" src="../bilder/skyrim_tes.jpg" style="height:400px; width:2000px"/>';
 </div>
 <?php include('../inc/skyrim_tes.php');
 ?>
