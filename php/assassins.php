@@ -29,14 +29,13 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 ?>
 </div>
 </div>
-<div class="row container-fluid">
+<div class="row container-fluid justify-content-center">
    </div>
-	<div class="col-lg-6 mb-5 text-center justify-content-center">
+	<div class="col-lg-5 mb-5 text-center">
 		<div class="embed-responsive embed-responsive-16by9 mb-5">
 		<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_H7G9pVNC3c" allowfullscreen></iframe>
 		</div>
 	</div>
-	
 	<div class="row container-fluid">
 	<div class="col mb-5 text-center">
 		<img src="../bilder/assasspano.jpg" class="img-fluid" alt="Responsive image">>
