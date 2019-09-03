@@ -32,7 +32,7 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 <div class="row container-fluid">
 	<div class="col mb-5 text-center">
 		<div class="embed-responsive embed-responsive-16by9 mb-5">
-		<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_H7G9pVNC3c&feature=youtu.be" allowfullscreen></iframe>
+		<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_H7G9pVNC3c" allowfullscreen></iframe>
 		</div>
 
 		<img src="../bilder/assasspano.jpg" class="img-fluid" alt="Responsive image">
