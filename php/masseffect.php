@@ -1,6 +1,6 @@
 <?php
 include('../inc/header.php');
-include('../txt/Mass Effect.html');
+include('../txt/Mass Effect Text.html');
 include('../inc/db.php');
 $reiheid = 1509;
 

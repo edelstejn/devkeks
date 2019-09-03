@@ -1,6 +1,6 @@
 <?php
 include('../inc/header.php');
-include('../txt/reddead.html');
+include('../txt/Read Dead Redemption.html');
 include('../inc/db.php');
 $reiheid = 1500;
 
@@ -31,7 +31,7 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 </div>
 <div class="row container-fluid">
 	<div class="col mb-5 text-center">
-		<img src="../bilder/Read Dead Panorama.jpg" class="img-fluid" alt="Responsive image">
+		<img src="../bilder/Read Dead Panorama.jpg" class="img-fluid" alt="Responsive image" style="height:400px; width:2000px">
 	</div>
 </div>
 <div class="row container-fluid">
