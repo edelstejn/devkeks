@@ -31,7 +31,7 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 </div>
 <div class="row container-fluid">
 	<div class="col mb-5 text-center">
-		<img src="../bilder/mass_effect 1.jpg" class="img-fluid" alt="Responsive image">
+		<img src="../bilder/mass effect 3 panorama.jpg" class="img-fluid" alt="Responsive image">
 	</div>
 </div>
 <div class="row container-fluid">
@@ -94,7 +94,7 @@ while($row = mysqli_fetch_object($data)){
 	echo '</div>';
 }
 ?>
-<img alt="panorama" src="../bilder/mass effect panorama.jpg" style="height:400px; width:2000px"/>';
+<img alt="panorama" src="../bilder/mass_effect 1.jpg" style="height:400px; width:2000px"/>';
 </div>
 <?php include('../inc/footer.php');
 ?>
