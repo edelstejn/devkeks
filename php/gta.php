@@ -2,7 +2,7 @@
 include('../inc/header.php');
 include('../txt/GTA Text.html');
 include('../inc/db.php');
-$reiheid = 1504;
+$reiheid = 1505;
 
 /*Spiel folgendem Genre zugeordnet*/
 /*Select genre value from DB*/
