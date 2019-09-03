@@ -1,145 +1,100 @@
-<?php include('../inc/header.php');
-
+<?php
+include('../inc/header.php');
+include('../txt/The Witcher.html');
 include('../inc/db.php');
-<div class="row">
-		<div class="col-12 mx-5 my-5">
-			<h1 class="display-3 text-center my-5">The Witcher</h1>
-			<p class="lead mx-5">The Witcher ist eine Rollenspielreihe des polnischen Entwicklerstudios CD Projekt RED für, basierend auf der Hexer-Romanreihe des polnischen Schriftstellers Andrzej Sapkowski.
-Zentrale Figur der Erzählung ist der von Narben gezeichnete Hexer Geralt von Riva, der gegen Bezahlung als professioneller Monsterjäger durch das Land zieht.
-Seine Markenzeichen sind sein langes weißes Haar und zwei Schwerter auf dem Rücken, eines aus Silber und eines aus Stahl. 
-Das Silberschwert dient dabei als Waffe gegen allerlei Arten von Monstern, da die meisten der vorkommenden Ungeheuer gegenüber Silber sehr empfindlich sind, das Stahlschwert dient dem Kampf gegen humanoide Gegner wie Zyklopen und Menschen. 
-Die Welt erzeugt eine authentische Atmospähre durch ihre erwachsenen und dunklen Geschichten, Rassismus, Gewalt, Drogen und Sexualität sind immer wiederkehrende Elemente. 
-Die Reihe überzeugt durch ihre immer wieder bahnbrechende Optik und die grandiosen Charaktere jede Geschichte ist einzigartig, was nicht zuletzt an der Romanvorlage liegt.
-Die Spiele lassen sich aus der Third Person spielen und überzeuge mit einem dynamischen Kampfsystem. Jeder Liebhaber von Rollenspielen sollte sich an The Wichter versuchen.</p>
-		</div>
-	</div>
-
 $reiheid = 1501;
 
-$genre = "SELECT * FROM Spiel
-INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel
-INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre
-WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
-
+/*Spiel folgendem Genre zugeordnet*/
+/*Select genre value from DB*/
+$genre = "SELECT * FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
 $genredata = $dbm->query($genre);
-
-while ($row = mysqli_fetch_object($genredata))
-{
-$genrearray[] = $row->Genre;
+while ($row = mysqli_fetch_object($genredata)){
+	$genrearray[] = $row->Genre;
 }
-
 $genrerein = array_unique ($genrearray);
 $genreliste = implode(", ", $genrerein);
-
-echo '<p>'.'Die Spiele dieser Reihe gehören den Genre/s ' . '<b>' .$genreliste . '</b>'.' an</p>'; 
-
-$platt ="Select * FROM Spiel
-INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel
-INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform
-WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
-
+echo '<p class="mx-5">'.'Die Spiele dieser Reihe gehören den folgenden Genre/s an:'.'<br><b class="text-danger">'.$genreliste .'</b></p>';
+?>
+<?php
+/*Spiel auf folgenden Plattformen verfügbar*/
+/*Select plattform value from DB*/ 
+$platt ="SELECT * FROM Spiel INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
 $plattdata = $dbm->query($platt);
-
-while ($row = mysqli_fetch_object($plattdata))
-{
-$plattarray[] = $row->Plattform;
+while ($row = mysqli_fetch_object($plattdata)){
+	$plattarray[] = $row->Plattform;
 }
-
 $plattrein = array_unique ($plattarray);
-$plattliste = implode(", ", $plattrein);
-
-
-echo '<p>'.'Die Spiele dieser Reihe sind auf den Plattformen ' . '<b>' .$plattliste . '</b>'.' erschienen.<br><br>'.'</p>';
-
-
-
-$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel
-INNER JOIN Publisher ON Publisher_idPublisher = idPublisher
-
-WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC
-";
+$plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, Wert2 "und" Wert3*/
+echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b class="text-danger">' .$plattliste . '</b></p>';
+?>
+</div>
+</div>
+<div class="row container-fluid">
+	<div class="col mb-5 text-center">
+		<img src="../bilder/.jpg" class="img-fluid" alt="Responsive image">
+	</div>
+</div>
+<div class="row container-fluid">
+	<div class="col mb-5">
+		<hr>
+		<p class="lead text-center text-danger">Alle Spiele dieser Spielereihe:</p><hr>
+	</div>
+</div>
+<div class="row container-fluid justify-content-center">
+<?php
+/*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
+$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink, videoURL FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
 $data = $dbm->query($sql);
-
-
-
-
-
-
-while($row = mysqli_fetch_object($data))
-{
-$bildarray[] = $row->Cover;
-$bildlink = implode($bildarray);
-
-$spielid = $row->idSpiel;
-#echo $spielid . '<br>';
-
-
-echo '<table class="table table-striped">';
-echo '<thead>';
-echo '<tr>';
-echo '<th>'.$row->Spielname.'</th>';
-echo '<th>'."Genres:".'</th>';
-echo '<th>'."Beschreibung:".'</th>';
-echo '<th>'."Erscheinungsdatum:".'</th>';
-echo '<th>'."Publisher:".'</th>';
-echo '<th>'."Plattform:".'</th>';
-echo '<th>'."Spielzeit (ca.):".'</th>';
-echo '</tr>';
-echo '</thead>';
-echo '<tbody>';
-echo '<tr>';
-echo '<td>'.'<img src="'. $bildlink . '" style="max-height:100%; max-width:100%"/>'.'</td>';
-
-#Generierung der Abfrage für die einzelnen Genres des Titels
-$sqlg = "SELECT Genre FROM Spiel
-INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel
-INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre
-WHERE idSpiel LIKE '$spielid'";
-
-$genresql = $dbm->query($sqlg);
-
-while ($grow = mysqli_fetch_object($genresql))
-{
-$genresqlarray[] = $grow->Genre;
+while($row = mysqli_fetch_object($data)){
+	$bildarray[] = $row->Cover;
+	$bildlink = implode($bildarray);
+	$spielid = $row->idSpiel;
+	#echo $spielid . '<br>';
+	#Generierung der Abfrage für die einzelnen Genres des Titels
+	$sqlg = "SELECT Genre FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE idSpiel LIKE '$spielid'";
+	$genresql = $dbm->query($sqlg);
+	while ($grow = mysqli_fetch_object($genresql)){
+		$genresqlarray[] = $grow->Genre;
+	}
+	$genresqlrein = array_unique ($genresqlarray);
+	$genresqlliste = implode(", ", $genresqlrein);
+	unset($genresqlarray);
+	#Generierung der Abfrage für die einzelnen Plattformen des Titels
+	$plattsql ="SELECT Plattform FROM Spiel INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform WHERE idSpiel LIKE '$spielid'";
+	$plattsqldata = $dbm->query($plattsql);
+	while ($prow = mysqli_fetch_object($plattsqldata)){
+		$plattsqlarray[] = $prow->Plattform;
+	}
+	$plattsqlrein = array_unique ($plattsqlarray);
+	$plattsqlliste = implode(", ", $plattsqlrein);
+	unset($plattsqlarray);
+	unset($bildarray);
+	echo '<div class="col-sm-3 mr-3 mb-5">';
+	echo '<div class="card" style="width: 20<rem;">';
+	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
+	echo '<div class="card-body">';
+	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
+	echo '<ul class="list-group list-group-flush mb-3">';
+	echo '<li class="list-group-item">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</li>';
+	echo '<li class="list-group-item">'.'<b>Publisher: </b>'.$row->Publisher.'</li>';
+	echo '<li class="list-group-item">'.'<b>Genre: </b>'.$genresqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Plattformen: </b>'.$plattsqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</li>';
+	echo '</ul>';
+	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
+	echo '<a href="'.$row->Kauflink.'" class="btn btn-dark btn-block mr-3" target="_blank">'.'Buy on Steam!'.'</a>';
+	echo '</div>';
+	echo '<div class="card-footer">';
+    echo '<small class="text-muted">Trailer zum Spiel</small>';
+    echo '</div>';
+    echo '<div class="embed-responsive embed-responsive-16by9">';
+    echo '<iframe class="embed-responsive-item" src="'.$row->videoURL.'" allowfullscreen></iframe>';
+    echo '</div>';
+	echo '</div>';
+	echo '</div>';
 }
-
-$genresqlrein = array_unique ($genresqlarray);
-$genresqlliste = implode(", ", $genresqlrein);
-
-
-unset($genresqlarray);
-echo '<td>'.$genresqlliste.'</td>';
-echo '<td>'.$row->Kurzbeschreibung.'</td>';
-echo '<td>'.$row->ReleaseDate.'</td>';
-echo '<td>'.$row->Publisher.'</td>';
-
-#Generierung der Abfrage für die einzelnen Plattformen des Titels
-$plattsql ="Select Plattform FROM Spiel
-INNER JOIN Spiel_has_Plattform ON Spiel.idSpiel = Spiel_has_Plattform.Spiel_idSpiel
-INNER JOIN Plattform ON Spiel_has_Plattform.Plattform_idPlattform = Plattform.idPlattform
-WHERE idSpiel LIKE '$spielid'";
-
-$plattsqldata = $dbm->query($plattsql);
-
-while ($prow = mysqli_fetch_object($plattsqldata))
-{
-$plattsqlarray[] = $prow->Plattform;
-}
-
-$plattsqlrein = array_unique ($plattsqlarray);
-$plattsqlliste = implode(", ", $plattsqlrein);
-
-echo '<td>'.$plattsqlliste.'</td>';
-echo '<td>'.$row->Spielzeit." Std.".'</td>';
-echo '</tr>';
-echo '</tbody>';
-
-unset($plattsqlarray);
-unset($bildarray);
-
-echo "</table>";
-echo "<br>";
-
-}
-echo '<img alt="panorama" src="../bilder/witcher_wh.jpg" style="height:400px; width:2000px" />';	
-include('../inc/footer.php'); ?>
+?>
+<img alt="panorama" src="../bilder/witcher_wh.jpg" style="height:400px; width:2000px"/>';
+</div>
+<?php include('../inc/footer.php');
+?>
