@@ -31,7 +31,7 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 </div>
 <div class="row container-fluid">
 	<div class="col mb-5 text-center">
-		<img src="rdrmarston.jpg" class="img-fluid" alt="Responsive image">
+		<img src="reddead2wp.jpg" class="img-fluid" alt="Responsive image">
 	</div>
 </div>
 <div class="row container-fluid">
