@@ -31,10 +31,11 @@ echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattfor
 </div>
 <div class="row container-fluid">
 	<div class="col mb-5 text-center">
-		<div class="embed-responsive embed-responsive-16by9">
+		<div class="embed-responsive embed-responsive-16by9" class="col mb-5>
 		<iframe class="embed-responsive-item" src="../Video/acorigins.mp4" allowfullscreen></iframe>
+		</div>
+
 		<img src="../bilder/assasspano.jpg" class="img-fluid" alt="Responsive image">
-	
 	</div>
 </div>
 <div class="row container-fluid">
