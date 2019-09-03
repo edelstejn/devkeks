@@ -1,10 +1,9 @@
 <?php
 include('../inc/header.php');
-include('../txt/Red Dead Redemption.html');
-?>
-<?php
+include('../txt/reddead.html');
 include('../inc/db.php');
 $reiheid = 1500;
+
 /*Spiel folgendem Genre zugeordnet*/
 /*Select genre value from DB*/
 $genre = "SELECT * FROM Spiel INNER JOIN Spiel_has_Genre ON Spiel.idSpiel = Spiel_has_Genre.Spiel_idSpiel INNER JOIN Genre ON Spiel_has_Genre.Genre_idGenre = Genre.idGenre WHERE Spielereihe_idSpielereihe LIKE '$reiheid'";
@@ -26,12 +25,25 @@ while ($row = mysqli_fetch_object($plattdata)){
 }
 $plattrein = array_unique ($plattarray);
 $plattliste = implode(", ", $plattrein); /*Ausnahme Funktion einbauen: Wert1, Wert2 "und" Wert3*/
-echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b class="text-danger">' .$plattliste . '</b></p></div></div>';
+echo '<p class="mx-5">'.'Die Spiele dieser Reihe sind auf den folgenden Plattformen erschienen:'.'<br><b class="text-danger">' .$plattliste . '</b></p>';
 ?>
+</div>
+</div>
+<div class="row container-fluid">
+	<div class="col mb-5 text-center">
+		<img src="../bilder/Read Dead Panorama.jpg" class="img-fluid" alt="Responsive image">
+	</div>
+</div>
+<div class="row container-fluid">
+	<div class="col mb-5">
+		<hr>
+		<p class="lead text-center text-danger">Alle Spiele dieser Spielereihe:</p><hr>
+	</div>
+</div>
 <div class="row container-fluid justify-content-center">
 <?php
 /*Ausgewählte Werte der Elemente des DB Eintrags ausdrucken*/
-$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
+$sql = "SELECT idSpiel, Spielname, Spielzeit, ReleaseDate, Kurzbeschreibung, Cover, Publisher, Kauflink, videoURL FROM Spiel INNER JOIN Publisher ON Publisher_idPublisher = idPublisher WHERE Spielereihe_idSpielereihe LIKE '$reiheid' ORDER BY ReleaseDate ASC";
 $data = $dbm->query($sql);
 while($row = mysqli_fetch_object($data)){
 	$bildarray[] = $row->Cover;
@@ -57,24 +69,32 @@ while($row = mysqli_fetch_object($data)){
 	$plattsqlliste = implode(", ", $plattsqlrein);
 	unset($plattsqlarray);
 	unset($bildarray);
-	echo '<div class="col-sm-3 mx-5 mb-5">';
-	echo '<div class="card" style="width: 30rem;">';
+	echo '<div class="col-sm-3 mr-3 mb-5">';
+	echo '<div class="card" style="width: 20<rem;">';
 	echo '<img src="'. $bildlink .'" class="card-img-top" alt="...">';
 	echo '<div class="card-body">';
 	echo '<h5 class="card-title">'.$row->Spielname.'</h5>';
-	echo '<p class="card-text">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</p>';
-	echo '<p class="card-text">'.'<b>Publisher: </b>'.$row->Publisher.'</p>';
-	echo '<p class="card-text">'.'<b>Genre: </b>'.$genresqlliste.'</p>';
-	echo '<p class="card-text">'.'<b>Plattformen: </b>'.$plattsqlliste.'</p>';
-	echo '<p class="card-text">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</p>';
+	echo '<ul class="list-group list-group-flush mb-3">';
+	echo '<li class="list-group-item">'.'<b>Erschienen am: </b>'.$row->ReleaseDate.'</li>';
+	echo '<li class="list-group-item">'.'<b>Publisher: </b>'.$row->Publisher.'</li>';
+	echo '<li class="list-group-item">'.'<b>Genre: </b>'.$genresqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Plattformen: </b>'.$plattsqlliste.'</li>';
+	echo '<li class="list-group-item">'.'<b>Spielzeit ca.: </b>'.$row->Spielzeit.' Std.'.'</li>';
+	echo '</ul>';
 	echo '<p class="card-text">'.$row->Kurzbeschreibung.'</p>';
-	echo '<a href="#" class="btn btn-primary">'.'Buy on Steam!'.'</a>';
+	echo '<a href="'.$row->Kauflink.'" class="btn btn-dark btn-block mr-3" target="_blank">'.'Buy on Steam!'.'</a>';
 	echo '</div>';
+	echo '<div class="card-footer">';
+    echo '<small class="text-muted">Trailer zum Spiel</small>';
+    echo '</div>';
+    echo '<div class="embed-responsive embed-responsive-16by9">';
+    echo '<iframe class="embed-responsive-item" src="'.$row->videoURL.'" allowfullscreen></iframe>';
+    echo '</div>';
 	echo '</div>';
 	echo '</div>';
 }
-echo '<img alt="panorama" src="../bilder/rdrimg.jpg" style="height:400px; width:2000px"/>';
 ?>
+<img alt="panorama" src="../bilder/rdrimg.jpg" style="height:400px; width:2000px"/>';
 </div>
 <?php include('../inc/footer.php');
 ?>
