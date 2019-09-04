@@ -94,7 +94,7 @@ while($row = mysqli_fetch_object($data)){
 	echo '</div>';
 }
 ?>
-<img alt="panorama" src="../bilder/ac_banner.jpg" style="height:400px; width:2000px"/>';
+<img alt="panorama" src="../bilder/gta_v.jpg" style="height:400px; width:2000px"/>';
 </div>
 <?php include('../inc/footer.php');
 ?>
